@@ -9,6 +9,7 @@ Stability:           Experimental
 Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.2
+Extra-source-files:  .ghci, log/placeholder
 
 Executable projname
   hs-source-dirs: src

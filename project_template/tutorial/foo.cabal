@@ -9,6 +9,7 @@ Stability:           Experimental
 Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.2
+Extra-source-files:  .ghci, log/placeholder
 
 Flag old-base
   default: False
@@ -17,6 +18,7 @@ Flag old-base
 Executable projname
   hs-source-dirs: src
   main-is: Tutorial.lhs
+  other-modules: Part2
 
   Build-depends:
     bytestring                >= 0.9.1   && < 0.11,

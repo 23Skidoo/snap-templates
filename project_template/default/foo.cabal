@@ -9,6 +9,8 @@ Stability:           Experimental
 Category:            Web
 Build-type:          Simple
 Cabal-version:       >=1.2
+Extra-source-files:  .ghci, snaplets/heist/templates/*.tpl, static/screen.css,
+                     log/placeholder
 
 Flag development
   Description: Whether to build the server in development (interpreted) mode
@@ -21,6 +23,7 @@ Flag old-base
 Executable projname
   hs-source-dirs: src
   main-is: Main.hs
+  other-modules: Application, Site
 
   Build-depends:
     bytestring                >= 0.9.1   && < 0.11,

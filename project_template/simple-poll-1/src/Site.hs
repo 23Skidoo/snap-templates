@@ -52,7 +52,7 @@ postResults = do
   par <- getParam "answer"
   let isValidKey k = k `elem` pollChoices
       key          = fromMaybe "???" $ mfilter isValidKey par
-  liftIO $ modifyIORef r (M.insertWith (+) key 1)
+  liftIO $ atomicModifyIORef r (M.insertWith (+) key 1)
   showResults
 
 showResults :: AppHandler ()
