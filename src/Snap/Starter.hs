@@ -19,6 +19,8 @@ import           Snap.StarterTH
 buildData "tDirBareBones" "barebones"
 buildData "tDirDefault" "default"
 buildData "tDirTutorial" "tutorial"
+buildData "tDirSimplePoll1" "simple-poll-1"
+buildData "tDirSimplePoll2" "simple-poll-2"
 
 
 ------------------------------------------------------------------------------
@@ -49,9 +51,11 @@ initUsage = unlines
     , "  snap init [type]"
     , ""
     , "    [type] can be one of:"
-    , "      default   - A default project using snaplets and heist"
-    , "      barebones - A barebones project with minimal dependencies"
-    , "      tutorial  - The literate Haskell tutorial project"
+    , "      default        - A default project using snaplets and heist"
+    , "      barebones      - A barebones project with minimal dependencies"
+    , "      tutorial       - The literate Haskell tutorial project"
+    , "      simple-poll-1  - A simple poll application"
+    , "      simple-poll-2  - A simple poll application (Heist version)"
     , ""
     , "  If [type] is omitted, the default project is generated."
     ]
@@ -124,11 +128,13 @@ initProject args = do
             setup'   = setup projName
 
         case args' of
-          []            -> setup' tDirDefault
-          ["barebones"] -> setup' tDirBareBones
-          ["default"]   -> setup' tDirDefault
-          ["tutorial"]  -> setup' tDirTutorial
-          _             -> do
+          []                -> setup' tDirDefault
+          ["barebones"]     -> setup' tDirBareBones
+          ["default"]       -> setup' tDirDefault
+          ["tutorial"]      -> setup' tDirTutorial
+          ["simple-poll-1"] -> setup' tDirSimplePoll1
+          ["simple-poll-2"] -> setup' tDirSimplePoll2
+          _                 -> do
             putStrLn initUsage
             exitFailure
 

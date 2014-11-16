@@ -35,6 +35,7 @@ extra-source-files:
   project_template/barebones/foo.cabal,
   project_template/barebones/log/access.log,
   project_template/barebones/src/Main.hs,
+
   project_template/default/.ghci,
   project_template/default/foo.cabal,
   project_template/default/log/access.log,
@@ -50,11 +51,32 @@ extra-source-files:
   project_template/default/src/Application.hs,
   project_template/default/src/Main.hs,
   project_template/default/src/Site.hs,
+
   project_template/tutorial/.ghci,
   project_template/tutorial/foo.cabal,
   project_template/tutorial/log/placeholder,
   project_template/tutorial/src/Part2.lhs,
   project_template/tutorial/src/Tutorial.lhs,
+
+  project_template/simple-poll-1/.ghci,
+  project_template/simple-poll-1/simple-poll.cabal,
+  project_template/simple-poll-1/Setup.hs,
+  project_template/simple-poll-1/src/Application.hs,
+  project_template/simple-poll-1/src/Site.hs,
+  project_template/simple-poll-1/src/Main.hs,
+  project_template/simple-poll-2/log/placeholder,
+
+  project_template/simple-poll-2/.ghci,
+  project_template/simple-poll-2/simple-poll.cabal,
+  project_template/simple-poll-2/Setup.hs,
+  project_template/simple-poll-2/src/Application.hs,
+  project_template/simple-poll-2/src/Site.hs,
+  project_template/simple-poll-2/src/Main.hs,
+  project_template/simple-poll-2/log/placeholder,
+  project_template/simple-poll-2/snaplets/heist/templates/poll.tpl,
+  project_template/simple-poll-2/snaplets/heist/templates/results.tpl,
+  project_template/simple-poll-2/snaplets/heist/templates/base.tpl,
+
   test/snap-testsuite.cabal,
   test/runTestsAndCoverage.sh
 
