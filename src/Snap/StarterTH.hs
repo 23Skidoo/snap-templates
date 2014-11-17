@@ -6,6 +6,7 @@ import qualified Data.Foldable as F
 import           Data.List
 import           Language.Haskell.TH
 import           Language.Haskell.TH.Syntax
+import           System.Directory (getCurrentDirectory)
 import           System.Directory.Tree
 import           System.FilePath
 ------------------------------------------------------------------------------
@@ -45,7 +46,13 @@ readTree dir = do
 --
 dirQ :: FilePath -> Q Exp
 dirQ tplDir = do
-    d <- runIO . readTree $ "project_template" </> tplDir
+    let dname = "project_template" </> tplDir
+    d <- runIO . readTree $ dname
+    c <- runIO getCurrentDirectory
+    mapM_ (\(fname, _content) -> do
+              -- 'fname' starts with dot (e.g. './src/SomeModule.hs'), hence the
+              -- need to normalise.
+              addDependentFile $ c </> dname </> (normalise fname)) (snd d)
     lift d
 
 
